@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "01af0cc2-f39d-425e-b53c-e45b108af76e",
+		"name": "Star Wars API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26052896"
+	},
+	"item": [
+		{
+			"name": "Listar personagem 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar o nome do personagem\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"C-3PO\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dev}}people/2",
+					"host": [
+						"{{dev}}people"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar personagem  2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://swapi.dev/api/people/2/",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
